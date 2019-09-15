@@ -36,15 +36,12 @@ $sidebar = ( is_active_sidebar( 'sidebar-1' )
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
 				<?php do_action( 'singl_credits' ); ?>
-				<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'singl' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'singl' ), 'Singl', '<a href="http://wordpress.com/themes/singl/" rel="designer">WordPress.com</a>' ); ?>
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'hfnp-theme' ), 'hfnp-theme', '<a href="http://havefunandplay.com" rel="designer">Have Fun and Play</a>' ); ?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- .bottom-wrapper -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
