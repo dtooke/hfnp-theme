@@ -1,37 +1,38 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
- * @package Singl
  */
 
-get_header(); ?>
+get_header();
+?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main id="main" class="site-main" role="main">
 
-			<?php if ( have_posts() ) : ?>
+	<?php 
+	if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'singl' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header><!-- .page-header -->
+		<header class="page-header">
+			<h1>Results: <?php echo get_search_query(); ?></h1>
+		</header>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) : the_post();
 
-					<?php get_template_part( 'content', 'search' ); ?>
+			get_template_part( 'template-parts/content', 'search' );
 
-				<?php endwhile; ?>
+		endwhile;
+	
+	else: ?>
 
-				<?php singl_paging_nav(); ?>
+		<p>Sorry, but nothing matched your search terms.</p>
+	
+	<?php
+	endif;
+	?>
 
-			<?php else : ?>
+</main>
 
-				<?php get_template_part( 'content', 'none' ); ?>
-
-			<?php endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
